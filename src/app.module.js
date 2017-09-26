@@ -13,6 +13,7 @@ app.config(function ($translateProvider) {
     if (browserLang && browserLang.indexOf('zh') > -1) {
         defaultLang = 'zh-cn';
     }
+
     console.log(browserLang, defaultLang);
     for (var lang in window.Translations) {
         $translateProvider.translations(lang, window.Translations[lang]);

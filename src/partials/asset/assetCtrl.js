@@ -111,13 +111,13 @@ angular.module('asch').controller('assetCtrl', function ($scope, $rootScope, api
     //注册发行商
     $scope.registerPublish = function () {
         if(userService.issuerStatus){
-            toastError('你已经注册了发行商');
+            toastError('You have registered the publisher');
             return false;
         }
         var name = $scope.monname;
         var desc = $scope.mondesc;
         if(!$scope.monname || !$scope.mondesc){
-            return toastError('必须输入发行商名称以及描述');
+            return toastError('You must enter the publisher name and description');
         }
 
         if (!userService.secondPublicKey) {
@@ -140,12 +140,12 @@ angular.module('asch').controller('assetCtrl', function ($scope, $rootScope, api
     //注册资产
     $scope.registerAsset = function () {
         if(!userService.issuerStatus){
-            toastError('你还没有注册发行商');
+            toastError('You have not registered a publisher yet');
             return false;
         }
         var reg = /^[A-Z]{3,6}$/;
         if(!reg.test($scope.publishName)){
-            toastError('请输入3-6位大写字母');
+            toastError('Please enter 3-6 capital letters');
             return false;
         }
         var name = $scope.monname +'.'+ $scope.publishName;
@@ -154,16 +154,16 @@ angular.module('asch').controller('assetCtrl', function ($scope, $rootScope, api
         var precision = Number($scope.precision);
         var strategy = $scope.strategy;
         if (!desc) {
-            return toastError('请输入资产描述');
+            return toastError('Please enter an asset description');
         }
         if (!parseInt(maximum)) {
-            return toastError('您输入的发行上限不正确');
+            return toastError('The rate you entered is incorrect');
         }
         if (!precision ||precision < 0 || precision > 16) {
-            return toastError('您输入的资产精度不正确');
+            return toastError('The asset you entered is not accurate');
         }
         if (String($scope.precision).indexOf('.') != -1) {
-            return toastError('精度必须为0-16的整数');
+            return toastError('The precision must be an integer from 0 to 16');
         }
         if (!userService.secondPublicKey) {
             $scope.rasecondPassword = '';
@@ -294,10 +294,10 @@ angular.module('asch').controller('assetCtrl', function ($scope, $rootScope, api
             return ;
         }
         if (!$scope.amount) {
-            return toastError('必须输入发行数额');
+            return toastError('You must enter the issue amount');
         }
         if (!parseInt($scope.amount)) {
-            return toastError('您输入的发行数额不正确');
+            return toastError('The amount you entered is incorrect');
         }
         var realAmount = parseInt($scope.amount) * Math.pow(10, $scope.currentAsset.precision);
         var trs = AschJS.uia.createIssue($scope.myPublishmoneyName, String(realAmount), userService.secret, $scope.pbsecondPassword);
@@ -319,8 +319,8 @@ angular.module('asch').controller('assetCtrl', function ($scope, $rootScope, api
         $scope.myAss.publish = false;
     };
     $scope.models = [
-        { value: 0, name: '黑名单模式' },
-        { value: 1, name: '白名单模式' }
+        { value: 0, name: 'Blacklist mode' },
+        { value: 1, name: 'White list mode' }
     ];
     $scope.mymodel = $scope.models[1];
 

@@ -37,7 +37,7 @@
 
     </div>
     <div class="content first" ng-show="registerpublish">
-        <p class="title" ng-show="issuerStatus">你已经注册了发行商</p>
+        <p class="title" ng-show="issuerStatus">You have registered the publisher</p>
 
         <div class="_item">
             <label >{{'DAPP_NAME' | translate}}</label>
@@ -74,7 +74,7 @@
         </div>
         <div class="_item">
             <label >{{'STRATEGY' | translate}}</label>
-            <textarea  required  ng-model="strategy" placeholder="如果不懂如何使用，不要随意设置该字段"></textarea>
+            <textarea  required  ng-model="strategy" placeholder="If you do not know how to use，Do not set this field at will"></textarea>
 
         </div>
         <div class="_item">
@@ -118,18 +118,18 @@
                 <td>{{i.writeoff  }}</td>
                 <td>{{i.allowWriteoff ? 'Y' : 'N'}}/{{i.allowWhitelist ? 'Y' : 'N'}}/{{i.allowBlacklist ? 'Y' : 'N'}}</td>
                 <td>
-                    <span class="writeoff" ng-click="myWriteOff(i)">注销</span>
-                    <span class="span publish" ng-click="myPublish(i)">发行</span>
-                    <span class="settings" ng-click="mySettings(i)">设置</span>
+                    <span class="writeoff" ng-click="myWriteOff(i)">Write off</span>
+                    <span class="span publish" ng-click="myPublish(i)">issued</span>
+                    <span class="settings" ng-click="mySettings(i)">Set up</span>
                     <span class="add" ng-click="myAddPlus(i)">+ACL</span>
                     <span class="remove" ng-click="myreduceACL(i)">-ACL</span>
-                    <span class="transtion" ><a class="hand" ng-click="transferView(i,2)">转账</a></span>
+                    <span class="transtion" ><a class="hand" ng-click="transferView(i,2)">Transfer</a></span>
                 </td>
             </tr>
         </table>
         <div id="writeoff" ng-show="myAss.writeoff">
             <a class="close" href="" ng-click="writeoffClose()"><img src="/assets/common/close.png" alt=""></a>
-            <p>您正在注销{{moneyName}}资产，该操作不可逆，需要消耗手续费0.1 ATT</p>
+            <p>You are logging out{{moneyName}}assets，The operation is irreversible，Need to consume a fee of 0.1 ATT</p>
             <div class="_item" ng-show="secpwd">
                 <label >{{'SECOND_PASSWORD' | translate}}</label>
                 <input type="password" ng-model="wosecondPassword" >
@@ -138,7 +138,7 @@
         </div>
         <div id="publish" ng-show="myAss.publish">
             <a class="close" href="" ng-click="publishClose()"><img src="/assets/common/close.png" alt=""></a>
-            <p>您正在发行{{myPublishmoneyName}}资产，该操作不可逆，需要消耗手续费0.1 ATT</p>
+            <p>You are releasing{{myPublishmoneyName}}assets，The operation is irreversible，Need to consume a fee of 0.1 ATT</p>
             <div class="_item">
                 <label >{{'ISSUE_NUMBER' | translate}}</label>
                 <input type="text" ng-model="amount" >
@@ -151,15 +151,15 @@
         </div>
         <div id="settings" ng-show="myAss.set">
             <a class="close" href="" ng-click="settingsClose()"><img src="/assets/common/close.png" alt=""></a>
-            <p>你正在执行{{moneyName}}资产设置操作，需要消耗0.1 ATT</p>
+            <p>You are executing{{moneyName}}Asset setting operation，Need to consume 0.1 ATT</p>
             <div class="_item">
                 <label >{{'TYPE' | translate}}</label>
                 <input type="text" value="ACL"  disabled>
             </div>
             <div class="_item">
                 <label >{{'VALUE' | translate}}</label>
-                <input ng-show="acl == 0" type="text" value="黑名单模式"  disabled>
-                <input ng-show="acl == 1" type="text" value="白名单模式"  disabled>
+                <input ng-show="acl == 0" type="text" value="Blacklist mode"  disabled>
+                <input ng-show="acl == 1" type="text" value="White list mode"  disabled>
             </div>
             <div class="_item" ng-show="secpwd">
                 <label >{{'SECOND_PASSWORD' | translate}}</label>
@@ -201,8 +201,8 @@
         </ul>
     </script>
     <div id="comfirmDialog" ng-show="comfirmDialog">
-        <p ng-show="dialogNUM == 1">该操作需要消耗手续费{{ publishtrs.fee | xasFilter}} ATT</p>
-        <p ng-show="dialogNUM == 2">该操作需要消耗手续费{{ assetTrs.fee | xasFilter}} ATT</p>
+        <p ng-show="dialogNUM == 1">The operation requires a fee{{ publishtrs.fee | xasFilter}} ATT</p>
+        <p ng-show="dialogNUM == 2">The operation requires a fee{{ assetTrs.fee | xasFilter}} ATT</p>
         <button class="sent" ng-click="comfirmDialogClose()">{{'CANCEL' | translate}}</button>
         <button class="sent" ng-click="comfirmSub()">{{'CONFIRM' | translate}}</button>
     </div>
