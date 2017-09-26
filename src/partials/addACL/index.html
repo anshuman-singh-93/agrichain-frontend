@@ -2,8 +2,8 @@
 <div id="addacl" ng-controller="addaclCtrl" ng-init="init()">
     <div class="_item">
         <label >{{'CURRENT_MODE' | translate}}</label>
-        <input ng-show="addACL.acl == 0" type="text" value="黑名单模式"  disabled>
-        <input ng-show="addACL.acl == 1" type="text" value="白名单模式"  disabled>
+        <input ng-show="addACL.acl == 0" type="text" value="Blacklist mode"  disabled>
+        <input ng-show="addACL.acl == 1" type="text" value="White list mode"  disabled>
     </div>
     <div class="_item">
         <label >{{'ADD_LIST' | translate}}</label>
@@ -16,7 +16,7 @@
     </div>
     <button class="sent" ng-click="sub()">{{'SUBMIT' | translate}}</button>
     <div id="comfirmDia" ng-show="comfirmDialog">
-        <p>该操作需要消耗手续费{{ addacltrs.fee | xasFilter}} ATT</p>
+        <p>The operation requires a fee{{ addacltrs.fee | xasFilter}} ATT</p>
         <button class="sent" ng-click="comfirmDialogClose()">{{'CANCEL' | translate}}</button>
         <button class="sent" ng-click="comfirmSub()">{{'CONFIRM' | translate}}</button>
     </div>

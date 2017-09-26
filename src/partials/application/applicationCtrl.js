@@ -171,8 +171,8 @@ angular.module('asch').controller('applicationCtrl', function ($scope, $rootScop
             $scope.depositedDapp = null;
             toast($translate.instant('DEPOSIT_SUCCESS'));
         } else {
-            if(res.error.indexOf('Old address') != -1 || res.error.indexOf('old address') != -1 || res.error.indexOf('老地址') != -1 || res.error.indexOf('数字地址') != -1) {
-              toastError('dapp不支持老地址（数字地址），请用最新的字母地址（base58格式）')
+            if(res.error.indexOf('Old address') != -1 || res.error.indexOf('old address') != -1 || res.error.indexOf('Old address') != -1 || res.error.indexOf('Digital address') != -1) {
+              toastError('dapp does not support old addresses(Digital address)，Please use the latest letter address（base58 format）')
             } else {
               toastError(res.error)  
             }
