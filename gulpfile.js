@@ -39,7 +39,7 @@ var inject = require('gulp-inject');
 
 var serverApi = cjson.load('./server.json');
 var args = process.argv.slice(2);
-var cmd = 'mock';
+var cmd = 'dev';
 var projectName = 'asch';
 if (/^--project/.test(args[1])) {
 	projectName = args[1].split('=')[1];

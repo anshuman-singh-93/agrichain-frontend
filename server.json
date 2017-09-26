@@ -1,7 +1,7 @@
 {
 	"server": {
 		"dev": "http://localhost:4096",
-		"dev2": "http://121.42.194.216:4097",
+		"dev2": "http://test.quest.careers:4096",
 		"dev3": "http://101.200.123.124:4097"
 	},
 	//登录接口
